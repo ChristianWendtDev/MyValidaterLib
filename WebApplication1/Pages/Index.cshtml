@@ -1,0 +1,81 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="container py-4">
+    <h1>Validation test form</h1>
+    <p>Enter contact information and submit the form to test the validation library.</p>
+
+    <form method="post" asp-page-handler="Validate">
+        <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+
+        <div class="row g-3">
+            <div class="col-md-6">
+                <label asp-for="FirstName" class="form-label">First name</label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+
+            <div class="col-md-6">
+                <label asp-for="SirName" class="form-label">Surname</label>
+                <input asp-for="SirName" class="form-control" />
+                <span asp-validation-for="SirName" class="text-danger"></span>
+            </div>
+
+            <div class="col-md-8">
+                <label asp-for="Street" class="form-label">Street</label>
+                <input asp-for="Street" class="form-control" />
+                <span asp-validation-for="Street" class="text-danger"></span>
+            </div>
+
+            <div class="col-md-4">
+                <label asp-for="Number" class="form-label">House number</label>
+                <input asp-for="Number" class="form-control" type="number" />
+                <span asp-validation-for="Number" class="text-danger"></span>
+            </div>
+
+            <div class="col-md-4">
+                <label asp-for="ZipCode" class="form-label">ZIP code</label>
+                <input asp-for="ZipCode" class="form-control" type="number" />
+                <span asp-validation-for="ZipCode" class="text-danger"></span>
+            </div>
+
+            <div class="col-md-8">
+                <label asp-for="City" class="form-label">City</label>
+                <input asp-for="City" class="form-control" />
+                <span asp-validation-for="City" class="text-danger"></span>
+            </div>
+
+            <div class="col-md-6">
+                <label asp-for="Phone" class="form-label">Phone number</label>
+                <input asp-for="Phone" class="form-control" type="tel" />
+                <span asp-validation-for="Phone" class="text-danger"></span>
+            </div>
+
+            <div class="col-md-6">
+                <label asp-for="Email" class="form-label">Email address</label>
+                <input asp-for="Email" class="form-control" type="email" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary mt-4">Validate</button>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+
+
+
+
+
+
+
+
+
+
